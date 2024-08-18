@@ -15,13 +15,27 @@
 <script>
 const radius = 100;
 let x, y   
-    function setup(){
+let score = 0;    
+function setup(){
         createCanvas(windowWidth, windowHeight);
         x = random(windowWidth);
         y = random(windowHeight);
         background(137,54,203);
     }
-
+    function draw(){
+        background(220);
+        fill(255,0,255);
+        ellipse(x, y, radius*2, radius*2);
+        text("Score:"+ score, 10, 20)
+    }
+    function mousePressed(){
+        let d = dist(mouseX, mouseY, x, y);
+    if (d < radius) {
+        x = random(windowWidth);
+        y = random(windowHeight);
+        score ++;
+    }
+    }
 </script>
 </body>
 </html>
