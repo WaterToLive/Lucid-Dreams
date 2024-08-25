@@ -13,18 +13,21 @@
     <h1>MY GAME IS COOL: CHECK IT OUT</h1>
    
 <script>
-const radius = 100;
+let r,g,b;
+let radius = 100;
 let x, y   
 let score = 0;    
 function setup(){
         createCanvas(windowWidth, windowHeight);
         x = random(windowWidth);
         y = random(windowHeight);
-        background(137,54,203);
+        r =  random(225);
+        g =  random(255); 
+        b =  random(255);
     }
     function draw(){
         background(220);
-        fill(13,23,255);
+        fill(r,g,b);
         ellipse(x, y, radius*2, radius*2);
         text("Score:"+ score, 10, 20)
     }
