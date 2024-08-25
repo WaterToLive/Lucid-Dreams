@@ -13,11 +13,12 @@
     <h1>MY GAME IS COOL: CHECK IT OUT</h1>
    
 <script>
-let r,g,b;
-let radius = 100;
-let x, y   
-let score = 0;    
-function setup(){
+    let r,g,b;
+    let radius = 100;
+    let x, y   
+    let score = 0;    
+    
+    function setup(){
         createCanvas(windowWidth, windowHeight);
         x = random(windowWidth);
         y = random(windowHeight);
@@ -25,36 +26,40 @@ function setup(){
         g =  random(255); 
         b =  random(255);
     }
+    
     function draw(){
         background(220);
         fill(r,g,b);
         ellipse(x, y, radius*2, radius*2);
         text("Score:"+ score, 10, 20)
     }
+    
     function mousePressed(){
         let d = dist(mouseX, mouseY, x, y);
         if (d < radius) {
-    newCircle();
-    score++;
-    if (score == 10) {
-       radius/=2;
-    }
-    }
+            newCircle();
+            score++;
+            if (score == 10) {
+               radius/=2;
+            }
+        }
         if (d < radius) {
-        x = random(windowWidth);
-        y = random(windowHeight);
-        score ++;
+            x = random(windowWidth);
+            y = random(windowHeight);
+            score ++;
+        }
     }
-}
-function newCircle() {
-   x = random(windowWidth);
-   y = random(windowHeight);
-   r = random(255);
-   g = random(255);
-   b = random(255);
+    
+    function newCircle() {
+       x = random(windowWidth);
+       y = random(windowHeight);
+       r = random(255);
+       g = random(255);
+       b = random(255);
+    }
+    
+    setInterval(newCircle, 1000);   
 
-}
- setInterval(newCircle, 1000);   
 </script>
 </body>
 </html>
