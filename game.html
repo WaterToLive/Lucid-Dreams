@@ -35,7 +35,16 @@ function setup(){
         y = random(windowHeight);
         score ++;
     }
-    }
+}
+function newCircle() {
+   x = random(windowWidth);
+   y = random(windowHeight);
+   r = random(255);
+   g = random(255);
+   b = random(255);
+}
+
+ setInterval(newCircle, 1000);   
 </script>
 </body>
 </html>
