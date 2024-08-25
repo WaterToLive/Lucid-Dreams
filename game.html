@@ -43,7 +43,13 @@ function newCircle() {
    g = random(255);
    b = random(255);
 }
-
+if (d < radius) {
+   newCircle();
+   score++;
+   if (score == 10) {
+       radius/=2;
+   }
+}
  setInterval(newCircle, 1000);   
 </script>
 </body>
