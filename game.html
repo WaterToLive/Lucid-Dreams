@@ -33,7 +33,14 @@ function setup(){
     }
     function mousePressed(){
         let d = dist(mouseX, mouseY, x, y);
-    if (d < radius) {
+        if (d < radius) {
+    newCircle();
+    score++;
+    if (score == 10) {
+       radius/=2;
+    }
+    }
+        if (d < radius) {
         x = random(windowWidth);
         y = random(windowHeight);
         score ++;
@@ -45,13 +52,7 @@ function newCircle() {
    r = random(255);
    g = random(255);
    b = random(255);
-}
-if (d < radius) {
-   newCircle();
-   score++;
-   if (score == 10) {
-       radius/=2;
-   }
+
 }
  setInterval(newCircle, 1000);   
 </script>
